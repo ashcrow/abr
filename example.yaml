@@ -1,0 +1,17 @@
+
+projects:
+  commissaire:
+    repo: https://github.com/projectatomic/commissaire
+    releaser: myreleaser
+releasers:
+  myreleaser:
+    type: RunOnce
+    executor: SerialExecutor
+    tools:
+      - name: List Everything
+        type: Shell
+        command: ls -la
+      - name: Fail but thats ok
+        type: Shell
+        command: aaaaaa
+        success_codes: [127]
